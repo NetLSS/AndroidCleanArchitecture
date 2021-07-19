@@ -41,4 +41,18 @@ class ExampleUnitTest {
         str = myClass.str
         println("result = $str") // Hello World
     }
+
+    @Test
+    fun test_Injection(){
+        val personComponent = DaggerPersonComponent.create()
+
+        val personA = personComponent.getPersonA()
+        println("${personA.name} : ${personA.age}") // SangSuLee : 100
+
+        val personB = PersonB()
+        DaggerPersonComponent.create().inject(personB)
+        assertEquals("SangSuLee", personB.name)
+
+        assertEquals(100, personB.age)
+    }
 }
