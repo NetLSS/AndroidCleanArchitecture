@@ -5,11 +5,11 @@ import dagger.Provides
 
 @Module
 class MyModule {
-//    @Provides
-//    fun provideHelloWorld(): String = "Hello World"
-
     @Provides
-    fun provideName():String = "SangSuLee"
+    fun provideHelloWorld(): String = "Hello World"
+
+//    @Provides
+//    fun provideName():String = "SangSuLee"
 
     @Provides
     fun provideInt(): Int = 1234

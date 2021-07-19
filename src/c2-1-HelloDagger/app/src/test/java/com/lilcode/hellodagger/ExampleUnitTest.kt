@@ -15,4 +15,16 @@ class ExampleUnitTest {
        val myComponent = DaggerMyComponent.create()
         println("result = ${myComponent.getString()}")
     }
+
+    @Test
+    fun test_memberInjection(){
+        val myClass = MyClass()
+        var str = myClass.str
+        assertNull("조회 결과 null", str)
+
+        val myComponent = DaggerMyComponent.create()
+        myComponent.inject(myClass)
+        str = myClass.str
+        assertEquals("Hello World", str)
+    }
 }
