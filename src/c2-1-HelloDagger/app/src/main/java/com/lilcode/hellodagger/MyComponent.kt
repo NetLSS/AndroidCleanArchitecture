@@ -11,27 +11,41 @@ interface MyComponent {
     fun getPerson(): Person
 
     fun inject(myClass: MyClass)
-    fun getInjector():MembersInjector<MyClass>
+    fun getInjector(): MembersInjector<MyClass>
 
     @Component.Builder
-    interface Builder{
+    interface Builder {
         fun setMyModule(myModule: MyModule): Builder
-        fun build():MyComponent
+        fun build(): MyComponent
     }
 
 }
 
+//@Component(modules = [BackendModule::class, FrontendModule::class])
+//interface ExampleComponent{
+//    fun myWidget(): MyWidget
+//
+//    @Component.Builder
+//    interface Builder {
+//        fun backendModule(bm: BackendModule): Builder
+//        fun frontendModule(fm: FrontendModule): Builder
+//
+//        @BindsInstance
+//        fun foo(foo: Foo): Builder)
+//        fun build(): MyComponent
+//    }
+//}
+
 @Component(modules = [BackendModule::class, FrontendModule::class])
-interface ExampleComponent{
+interface ExampleComponent {
     fun myWidget(): MyWidget
 
-    @Component.Builder
-    interface Builder {
-        fun backendModule(bm: BackendModule): Builder
-        fun frontendModule(fm: FrontendModule): Builder
-
-        @BindsInstance
-        fun foo(foo: Foo): Builder)
-        fun build(): MyComponent
+    @Component.Factory
+    interface Factory {
+        fun newMyComponent(
+            bm: BackendModule,
+            fm: FrontendModule,
+            @BindsInstance foo: Foo
+        ): MyComponent
     }
 }
