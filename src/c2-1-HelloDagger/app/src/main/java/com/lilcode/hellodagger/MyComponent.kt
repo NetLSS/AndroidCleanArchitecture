@@ -11,4 +11,10 @@ interface MyComponent {
 
     fun inject(myClass: MyClass)
     fun getInjector():MembersInjector<MyClass>
+
+    @Component.Builder
+    interface Builder{
+        fun setMyModule(myModule: MyModule): Builder
+        fun build():MyComponent
+    }
 }
