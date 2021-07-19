@@ -1,5 +1,6 @@
 package com.lilcode.hellodagger
 
+import dagger.BindsInstance
 import dagger.Component
 import dagger.MembersInjector
 
@@ -16,5 +17,21 @@ interface MyComponent {
     interface Builder{
         fun setMyModule(myModule: MyModule): Builder
         fun build():MyComponent
+    }
+
+}
+
+@Component(modules = [BackendModule::class, FrontendModule::class])
+interface ExampleComponent{
+    fun myWidget(): MyWidget
+
+    @Component.Builder
+    interface Builder {
+        fun backendModule(bm: BackendModule): Builder
+        fun frontendModule(fm: FrontendModule): Builder
+
+        @BindsInstance
+        fun foo(foo: Foo): Builder)
+        fun build(): MyComponent
     }
 }
