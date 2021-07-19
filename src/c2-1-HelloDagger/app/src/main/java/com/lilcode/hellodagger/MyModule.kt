@@ -12,7 +12,7 @@ class MyModule {
     fun provideName():String = "SangSuLee"
 
     @Provides
-    fun provideInt():Int = 1234
+    fun provideInt(): Int = 1234
 
     @Provides
     fun providePerson(name: String, age: Int): Person = Person(name, age)
