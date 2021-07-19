@@ -12,10 +12,10 @@ with 아키텍쳐를 알아야 앱 개발이 보인다. - charlezz
 1. [애플리케이션 설계란?](./post/ch01.%20안드로이드%20애플리케이션%20설계%20소개/1.%20애플리케이션%20설계란%3F.md) ([post](https://whyprogrammer.tistory.com/606))
 2. [애플리케이션의 설계 원칙](./post/ch01.%20안드로이드%20애플리케이션%20설계%20소개/2.%20애플리케이션%20설계%20원칙.md) ([post](https://whyprogrammer.tistory.com/606))
 3. [클린 아키텍처](./post/ch01.%20안드로이드%20애플리케이션%20설계%20소개/3.%20클린%20아키텍처.md) ([post](https://whyprogrammer.tistory.com/607))
-4. [안드로이드의 특징](./post/ch01.%20%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C%20%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%20%EC%84%A4%EA%B3%84%20%EC%86%8C%EA%B0%9C/4.%20%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C%EC%9D%98%20%ED%8A%B9%EC%A7%95.md) ([post](#))
-5. [안드로이드 애플리케이션 설계 원칙](./post/ch01.%20%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C%20%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%20%EC%84%A4%EA%B3%84%20%EC%86%8C%EA%B0%9C/5.%20%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C%20%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%20%EC%84%A4%EA%B3%84%20%EC%9B%90%EC%B9%99.md) ([post](#))
-6. [권장하는 애플리케이션 설계](./post/ch01.%20안드로이드%20애플리케이션%20설계%20소개/6.%20권장하는%20애플리케이션%20설계.md) ([post](#))
-7. [안드로이드 애플리케이션 설계 패턴](./post/ch01.%20안드로이드%20애플리케이션%20설계%20소개/7.%20안드로이드%20애플리케이션%20설계%20패턴.md) ([post](#))
+4. [안드로이드의 특징](./post/ch01.%20%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C%20%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%20%EC%84%A4%EA%B3%84%20%EC%86%8C%EA%B0%9C/4.%20%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C%EC%9D%98%20%ED%8A%B9%EC%A7%95.md) ([post](https://whyprogrammer.tistory.com/608))
+5. [안드로이드 애플리케이션 설계 원칙](./post/ch01.%20%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C%20%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%20%EC%84%A4%EA%B3%84%20%EC%86%8C%EA%B0%9C/5.%20%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C%20%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%20%EC%84%A4%EA%B3%84%20%EC%9B%90%EC%B9%99.md) ([post](https://whyprogrammer.tistory.com/608))
+6. [권장하는 애플리케이션 설계](./post/ch01.%20안드로이드%20애플리케이션%20설계%20소개/6.%20권장하는%20애플리케이션%20설계.md) ([post](https://whyprogrammer.tistory.com/608))
+7. [안드로이드 애플리케이션 설계 패턴](./post/ch01.%20안드로이드%20애플리케이션%20설계%20소개/7.%20안드로이드%20애플리케이션%20설계%20패턴.md) ([post](https://whyprogrammer.tistory.com/609))
 
 ## Chapter 02 - Dagger2를 이용한 의존성 주입 기법
 
