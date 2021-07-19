@@ -23,7 +23,7 @@ with 아키텍쳐를 알아야 앱 개발이 보인다. - charlezz
 2. [의존성 주입의 필요성](./post/ch02.%20Dagger2를%20이용한%20의존성%20주입%20기법/02.%20의존성%20주입의%20필요성.md) ([post](https://whyprogrammer.tistory.com/610))
 3. [Dagger2란 무엇인가?](./post/ch02.%20Dagger2를%20이용한%20의존성%20주입%20기법/03.%20Dagger2란%20무엇인가%3F.md) ([post](https://whyprogrammer.tistory.com/611))
 4. [프로젝트에 Dagger 설정하기](./post/ch02.%20Dagger2를%20이용한%20의존성%20주입%20기법/04.%20프로젝트에%20Dagger%20설정하기.md) ([post](https://whyprogrammer.tistory.com/611))
-5. [첫 번째 의존성 주입 구현하기](./post/ch02.%20Dagger2를%20이용한%20의존성%20주입%20기법/05.%20첫%20번째%20의존성%20주입%20구현하기.md) ([post](https://whyprogrammer.tistory.com/611))
+5. [첫 번째 의존성 주입 구현하기](./post/ch02.%20Dagger2를%20이용한%20의존성%20주입%20기법/05.%20첫%20번째%20의존성%20주입%20구현하기.md) ([post](https://whyprogrammer.tistory.com/611))([project](./src/c2-1-HelloDagger))
 6. 모듈 ([post](#))
 7. 컴포넌트 ([post](#))
 8. Lazy 주입과 Provider ([post](#))
