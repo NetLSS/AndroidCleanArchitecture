@@ -1,6 +1,7 @@
 package com.lilcode.hellodagger
 
 import dagger.Component
+import dagger.MembersInjector
 
 @Component(modules = [MyModule::class])
 interface MyComponent {
@@ -9,4 +10,5 @@ interface MyComponent {
     fun getPerson(): Person
 
     fun inject(myClass: MyClass)
+    fun getInjector():MembersInjector<MyClass>
 }
