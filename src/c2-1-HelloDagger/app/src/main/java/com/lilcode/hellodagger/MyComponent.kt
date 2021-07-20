@@ -36,16 +36,16 @@ interface MyComponent {
 //    }
 //}
 
-@Component(modules = [BackendModule::class, FrontendModule::class])
-interface ExampleComponent {
-    fun myWidget(): MyWidget
-
-    @Component.Factory
-    interface Factory {
-        fun newMyComponent(
-            bm: BackendModule,
-            fm: FrontendModule,
-            @BindsInstance foo: Foo
-        ): MyComponent
-    }
-}
+//@Component(modules = [BackendModule::class, FrontendModule::class])
+//interface ExampleComponent {
+//    fun myWidget(): MyWidget
+//
+//    @Component.Factory
+//    interface Factory {
+//        fun newMyComponent(
+//            bm: BackendModule,
+//            fm: FrontendModule,
+//            @BindsInstance foo: Foo
+//        ): MyComponent
+//    }
+//}

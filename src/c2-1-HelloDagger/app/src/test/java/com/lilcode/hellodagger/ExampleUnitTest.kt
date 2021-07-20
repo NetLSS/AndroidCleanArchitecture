@@ -55,4 +55,36 @@ class ExampleUnitTest {
 
         assertEquals(100, personB.age)
     }
+
+    @Test
+    fun test_lazy(){
+        val componentA = DaggerCounterComponent.create()
+        val counter = Counter()
+        componentA.inject(counter)
+        counter.printLazy()
+
+        val componentB = DaggerCounterComponent.create()
+        componentB.inject(counter)
+        counter.printLazy()
+
+        componentA.inject(counter)
+        counter.printLazy()
+    }
+    /*
+    printing...
+    computing...
+    100
+    100
+    100
+    printing...
+    computing...
+    100
+    100
+    100
+    printing...
+    computing...
+    101
+    101
+    101
+     */
 }
