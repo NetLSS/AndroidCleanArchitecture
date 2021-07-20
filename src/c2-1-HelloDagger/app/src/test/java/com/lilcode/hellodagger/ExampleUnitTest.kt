@@ -105,4 +105,12 @@ class ExampleUnitTest {
         102
          */
     }
+
+    @Test
+    fun test_namedComponent(){
+        val myClassNamed = MyClassNamed()
+        val component = DaggerMyComponentNamed.create()
+        component.inject(myClassNamed)
+        println(myClassNamed.strHello + myClassNamed.strWorld) // HelloWorld
+    }
 }
