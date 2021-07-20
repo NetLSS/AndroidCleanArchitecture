@@ -3,6 +3,7 @@ package com.lilcode.hellodagger
 import dagger.BindsInstance
 import dagger.Component
 import dagger.MembersInjector
+import javax.inject.Singleton
 
 @Component(modules = [MyModule::class])
 interface MyComponent {
@@ -49,3 +50,11 @@ interface MyComponent {
 //        ): MyComponent
 //    }
 //}
+
+
+// @Singleton 사용하기
+@Singleton
+@Component(modules = [MyModule2::class])
+interface MyComponent2{
+    fun getAny():Any
+}

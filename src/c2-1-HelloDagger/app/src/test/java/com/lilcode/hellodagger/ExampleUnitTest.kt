@@ -113,4 +113,14 @@ class ExampleUnitTest {
         component.inject(myClassNamed)
         println(myClassNamed.strHello + myClassNamed.strWorld) // HelloWorld
     }
+
+    @Test
+    fun test_anyIdentity(){
+        val myComponent = DaggerMyComponent2.create()
+        val temp1 = myComponent.getAny()
+        val temp2 = myComponent.getAny()
+        assertNotNull(temp1)
+        assertNotNull(temp2)
+        assertSame(temp1, temp2)
+    }
 }
