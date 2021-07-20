@@ -58,3 +58,9 @@ interface MyComponent {
 interface MyComponent2{
     fun getAny():Any
 }
+
+// @Binds 사용하기
+@Component(modules = [MyModuleRandom::class])
+interface MyComponentRandom{
+
+}

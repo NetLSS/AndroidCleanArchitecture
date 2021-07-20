@@ -1,8 +1,10 @@
 package com.lilcode.hellodagger
 
+import dagger.Binds
 import dagger.Component
 import dagger.Module
 import dagger.Provides
+import java.security.SecureRandom
 import java.util.*
 import javax.inject.Singleton
 
@@ -28,4 +30,12 @@ class MyModule2{
     @Provides
     @Singleton
     fun provideAny() = Any()
+
+
+}
+
+@Module
+abstract class MyModuleRandom{
+    @Binds
+    abstract fun bindRandom(secureRandom: SecureRandom):Random
 }
