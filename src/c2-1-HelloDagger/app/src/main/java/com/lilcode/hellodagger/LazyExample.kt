@@ -5,6 +5,8 @@ import dagger.Lazy
 import dagger.Module
 import dagger.Provides
 import javax.inject.Inject
+import javax.inject.Provider
+import javax.inject.Singleton
 
 @Module
 class CounterModule {
@@ -23,13 +25,16 @@ interface CounterComponent {
 }
 
 class Counter {
+//    @Inject
+//    lateinit var lazy: Lazy<Int>
+
     @Inject
-    lateinit var lazy: Lazy<Int>
+    lateinit var provider:Provider<Int>
 
     fun printLazy() {
         println("printing...")
-        println(lazy.get())
-        println(lazy.get())
-        println(lazy.get())
+        println(provider.get())
+        println(provider.get())
+        println(provider.get())
     }
 }

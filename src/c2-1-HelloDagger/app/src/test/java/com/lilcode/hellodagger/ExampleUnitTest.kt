@@ -69,22 +69,40 @@ class ExampleUnitTest {
 
         componentA.inject(counter)
         counter.printLazy()
+        /*
+        printing...
+        computing...
+        100
+        100
+        100
+        printing...
+        computing...
+        100
+        100
+        100
+        printing...
+        computing...
+        101
+        101
+        101
+         */
     }
-    /*
-    printing...
-    computing...
-    100
-    100
-    100
-    printing...
-    computing...
-    100
-    100
-    100
-    printing...
-    computing...
-    101
-    101
-    101
-     */
+
+
+    @Test
+    fun test_provider(){
+        val component = DaggerCounterComponent.create()
+        val counter = Counter()
+        component.inject(counter)
+        counter.printLazy()
+        /*
+        printing...
+        computing...
+        100
+        computing...
+        101
+        computing...
+        102
+         */
+    }
 }
