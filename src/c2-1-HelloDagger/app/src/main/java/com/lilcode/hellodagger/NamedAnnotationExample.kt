@@ -5,6 +5,12 @@ import dagger.Module
 import dagger.Provides
 import javax.inject.Inject
 import javax.inject.Named
+import javax.inject.Qualifier
+
+@Qualifier
+@Retention(AnnotationRetention.RUNTIME)
+annotation class Hello {
+}
 
 @Component(modules = [MyModuleNamed::class])
 interface MyComponentNamed {
@@ -14,20 +20,18 @@ interface MyComponentNamed {
 @Module
 class MyModuleNamed {
     @Provides
-    @Named("hello")
+    @Hello
     fun provideHello() = "Hello"
 
     @Provides
-    @Named("world")
     fun provideWorld() = "World"
 }
 
 class MyClassNamed {
     @Inject
-    @Named("hello")
+    @Hello
     lateinit var strHello: String
 
     @Inject
-    @Named("world")
     lateinit var strWorld: String
 }
