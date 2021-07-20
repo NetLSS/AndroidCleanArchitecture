@@ -1,5 +1,8 @@
 package com.lilcode.hellodagger
 
+import com.lilcode.hellodagger.bindsOptionalOf.DaggerNoStrComponent
+import com.lilcode.hellodagger.bindsOptionalOf.DaggerStrComponent
+import com.lilcode.hellodagger.bindsOptionalOf.Foo
 import dagger.MembersInjector
 import org.junit.Test
 
@@ -122,5 +125,18 @@ class ExampleUnitTest {
         assertNotNull(temp1)
         assertNotNull(temp2)
         assertSame(temp1, temp2)
+    }
+
+    @Test
+    fun test_Foo(){
+        val foo = Foo()
+
+        DaggerStrComponent.create().inject(foo)
+        println(foo.str.isPresent) // true
+        println(foo.str.get()) // Hello
+
+        DaggerNoStrComponent.create().inject(foo)
+        println(foo.str.isPresent) // false
+        println(foo.str.get()) // java.util.NoSuchElementException: No value present
     }
 }
