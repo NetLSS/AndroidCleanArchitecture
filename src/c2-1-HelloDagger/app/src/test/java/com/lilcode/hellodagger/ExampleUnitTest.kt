@@ -6,6 +6,7 @@ import com.lilcode.hellodagger.bindsOptionalOf.DaggerStrComponent
 import com.lilcode.hellodagger.bindsOptionalOf.Foo
 import com.lilcode.hellodagger.multiBindingMap.DaggerMapComponent
 import com.lilcode.hellodagger.multiBindingSet.DaggerSetComponent
+import com.lilcode.hellodagger.multiBindingSub.DaggerParentComponent
 import com.lilcode.hellodagger.multiBindingUserKey.Animal
 import com.lilcode.hellodagger.multiBindingUserKey.DaggerMapKeyComponent
 import dagger.MembersInjector
@@ -198,5 +199,34 @@ class ExampleUnitTest {
     Meow
     Bow-wow
     100f
+     */
+
+    @Test
+    fun test_multiBindingSubcomponent(){
+        val parentComp = DaggerParentComponent.create()
+        val childComp = parentComp.childCompBuilder().build()
+
+        println("List set in Parent")
+        var itr = parentComp.strings().iterator()
+        while(itr.hasNext()){
+            println(itr.next())
+        }
+
+        println("List set in Child")
+
+        itr = childComp.strings().iterator()
+        while(itr.hasNext()){
+            println(itr.next())
+        }
+    }
+    /*
+    List set in Parent
+    parent string 1
+    parent string 2
+    List set in Child
+    child string 2
+    child string 1
+    parent string 1
+    parent string 2
      */
 }
