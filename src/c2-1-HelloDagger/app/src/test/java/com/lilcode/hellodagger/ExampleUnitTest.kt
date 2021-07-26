@@ -4,6 +4,7 @@ import com.lilcode.hellodagger.bindsInstance.DaggerBindsComponent
 import com.lilcode.hellodagger.bindsOptionalOf.DaggerNoStrComponent
 import com.lilcode.hellodagger.bindsOptionalOf.DaggerStrComponent
 import com.lilcode.hellodagger.bindsOptionalOf.Foo
+import com.lilcode.hellodagger.multiBinding.DaggerSetComponent
 import dagger.MembersInjector
 import org.junit.Test
 
@@ -150,5 +151,18 @@ class ExampleUnitTest {
             .build()
         component.inject(foo)
         assertEquals("Hello World", foo.str)
+    }
+
+    @Test
+    fun test_multiBinding(){
+        val foo = com.lilcode.hellodagger.multiBinding.Foo()
+        DaggerSetComponent.create().inject(foo)
+        foo.print()
+        /*
+        Hello
+        World
+        Lee
+        Kim
+         */
     }
 }
