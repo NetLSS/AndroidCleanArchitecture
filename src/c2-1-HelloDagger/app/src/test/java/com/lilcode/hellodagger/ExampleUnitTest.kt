@@ -1,5 +1,6 @@
 package com.lilcode.hellodagger
 
+import com.lilcode.hellodagger.bindsInstance.DaggerBindsComponent
 import com.lilcode.hellodagger.bindsOptionalOf.DaggerNoStrComponent
 import com.lilcode.hellodagger.bindsOptionalOf.DaggerStrComponent
 import com.lilcode.hellodagger.bindsOptionalOf.Foo
@@ -15,13 +16,13 @@ import org.junit.Assert.*
  */
 class ExampleUnitTest {
     @Test
-    fun test_helloWorld(){
-       val myComponent = DaggerMyComponent.create()
+    fun test_helloWorld() {
+        val myComponent = DaggerMyComponent.create()
         println("result = ${myComponent.getString()}")
     }
 
     @Test
-    fun test_memberInjection(){
+    fun test_memberInjection() {
         val myClass = MyClass()
         var str = myClass.str
         assertNull("조회 결과 null", str)
@@ -33,7 +34,7 @@ class ExampleUnitTest {
     }
 
     @Test
-    fun tet_memberInjector(){
+    fun tet_memberInjector() {
         val myClass = MyClass()
         var str = myClass.str
         println("result = $str") // null
@@ -46,7 +47,7 @@ class ExampleUnitTest {
     }
 
     @Test
-    fun test_Injection(){
+    fun test_Injection() {
         val personComponent = DaggerPersonComponent.create()
 
         val personA = personComponent.getPersonA()
@@ -60,7 +61,7 @@ class ExampleUnitTest {
     }
 
     @Test
-    fun test_lazy(){
+    fun test_lazy() {
         val componentA = DaggerCounterComponent.create()
         val counter = Counter()
         componentA.inject(counter)
@@ -93,7 +94,7 @@ class ExampleUnitTest {
 
 
     @Test
-    fun test_provider(){
+    fun test_provider() {
         val component = DaggerCounterComponent.create()
         val counter = Counter()
         component.inject(counter)
@@ -110,7 +111,7 @@ class ExampleUnitTest {
     }
 
     @Test
-    fun test_namedComponent(){
+    fun test_namedComponent() {
         val myClassNamed = MyClassNamed()
         val component = DaggerMyComponentNamed.create()
         component.inject(myClassNamed)
@@ -118,7 +119,7 @@ class ExampleUnitTest {
     }
 
     @Test
-    fun test_anyIdentity(){
+    fun test_anyIdentity() {
         val myComponent = DaggerMyComponent2.create()
         val temp1 = myComponent.getAny()
         val temp2 = myComponent.getAny()
@@ -128,7 +129,7 @@ class ExampleUnitTest {
     }
 
     @Test
-    fun test_Foo(){
+    fun test_Foo() {
         val foo = Foo()
 
         DaggerStrComponent.create().inject(foo)
@@ -138,5 +139,16 @@ class ExampleUnitTest {
         DaggerNoStrComponent.create().inject(foo)
         println(foo.str.isPresent) // false
         println(foo.str.get()) // java.util.NoSuchElementException: No value present
+    }
+
+    @Test
+    fun test_bindsInstance() {
+        val hello = "Hello World"
+        val foo = com.lilcode.hellodagger.bindsInstance.Foo()
+        val component = DaggerBindsComponent.builder()
+            .setString(hello)
+            .build()
+        component.inject(foo)
+        assertEquals("Hello World", foo.str)
     }
 }
