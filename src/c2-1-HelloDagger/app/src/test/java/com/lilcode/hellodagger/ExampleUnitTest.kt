@@ -4,7 +4,8 @@ import com.lilcode.hellodagger.bindsInstance.DaggerBindsComponent
 import com.lilcode.hellodagger.bindsOptionalOf.DaggerNoStrComponent
 import com.lilcode.hellodagger.bindsOptionalOf.DaggerStrComponent
 import com.lilcode.hellodagger.bindsOptionalOf.Foo
-import com.lilcode.hellodagger.multiBinding.DaggerSetComponent
+import com.lilcode.hellodagger.multiBindingMap.DaggerMapComponent
+import com.lilcode.hellodagger.multiBindingSet.DaggerSetComponent
 import dagger.MembersInjector
 import org.junit.Test
 
@@ -155,7 +156,7 @@ class ExampleUnitTest {
 
     @Test
     fun test_multiBinding(){
-        val foo = com.lilcode.hellodagger.multiBinding.Foo()
+        val foo = com.lilcode.hellodagger.multiBindingSet.Foo()
         DaggerSetComponent.create().inject(foo)
         foo.print()
         /*
@@ -165,4 +166,18 @@ class ExampleUnitTest {
         Kim
          */
     }
+
+    @Test
+    fun test_multiBindingMap(){
+        val component = DaggerMapComponent.create()
+        val value = component.getLongByString()["foo"]
+        val str = component.getStringByClass()[com.lilcode.hellodagger.multiBindingMap.Foo::class.java]
+
+        println(value)
+        println(str)
+    }
+    /*
+    100
+    Foo String
+     */
 }

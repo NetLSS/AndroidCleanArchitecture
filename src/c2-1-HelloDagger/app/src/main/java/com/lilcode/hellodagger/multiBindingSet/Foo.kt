@@ -1,4 +1,4 @@
-package com.lilcode.hellodagger.multiBinding
+package com.lilcode.hellodagger.multiBindingSet
 
 import javax.inject.Inject
 
