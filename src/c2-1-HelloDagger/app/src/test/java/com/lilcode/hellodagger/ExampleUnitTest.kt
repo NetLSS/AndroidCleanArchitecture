@@ -4,6 +4,7 @@ import com.lilcode.hellodagger.bindsInstance.DaggerBindsComponent
 import com.lilcode.hellodagger.bindsOptionalOf.DaggerNoStrComponent
 import com.lilcode.hellodagger.bindsOptionalOf.DaggerStrComponent
 import com.lilcode.hellodagger.bindsOptionalOf.Foo
+import com.lilcode.hellodagger.multiBindingAbstract.DaggerMultibindsComponent
 import com.lilcode.hellodagger.multiBindingMap.DaggerMapComponent
 import com.lilcode.hellodagger.multiBindingSet.DaggerSetComponent
 import com.lilcode.hellodagger.multiBindingSub.DaggerParentComponent
@@ -229,4 +230,14 @@ class ExampleUnitTest {
     parent string 1
     parent string 2
      */
+
+    @Test
+    fun test_multiBinds(){
+        val component = DaggerMultibindsComponent.create()
+
+        // 비어 있음
+        for(s in component.getStrings()){
+            println(s)
+        }
+    }
 }
