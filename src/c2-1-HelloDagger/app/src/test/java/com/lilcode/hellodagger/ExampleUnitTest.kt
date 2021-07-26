@@ -6,6 +6,8 @@ import com.lilcode.hellodagger.bindsOptionalOf.DaggerStrComponent
 import com.lilcode.hellodagger.bindsOptionalOf.Foo
 import com.lilcode.hellodagger.multiBindingMap.DaggerMapComponent
 import com.lilcode.hellodagger.multiBindingSet.DaggerSetComponent
+import com.lilcode.hellodagger.multiBindingUserKey.Animal
+import com.lilcode.hellodagger.multiBindingUserKey.DaggerMapKeyComponent
 import dagger.MembersInjector
 import org.junit.Test
 
@@ -179,5 +181,22 @@ class ExampleUnitTest {
     /*
     100
     Foo String
+     */
+
+    @Test
+    fun test_customMapKey(){
+        val component = DaggerMapKeyComponent.create()
+        val cat = component.getStringsByAnimal()[Animal.CAT]
+        val dog = component.getStringsByAnimal()[Animal.DOG]
+        val number = component.getStringsByNumber()[Float::class.java]
+
+        println(cat)
+        println(dog)
+        println(number)
+    }
+    /*
+    Meow
+    Bow-wow
+    100f
      */
 }
