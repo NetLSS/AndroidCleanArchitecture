@@ -7,7 +7,7 @@ import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 import javax.inject.Named
 
-class MainFragment: DaggerFragment() {
+class MainFragment : DaggerFragment() {
     @Inject
     @Named("app")
     lateinit var appString: String

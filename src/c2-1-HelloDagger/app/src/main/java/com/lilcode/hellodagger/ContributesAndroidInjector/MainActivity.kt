@@ -8,7 +8,7 @@ import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 import javax.inject.Named
 
-class MainActivity: DaggerAppCompatActivity() {
+class MainActivity : DaggerAppCompatActivity() {
     @Inject
     @Named("app")
     lateinit var appString: String

@@ -8,7 +8,7 @@ import javax.inject.Singleton
 
 @Module
 abstract class AppModule {
-    companion object{
+    companion object {
         @Named("app")
         @Provides
         @Singleton
