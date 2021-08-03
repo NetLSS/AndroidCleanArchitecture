@@ -10,10 +10,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".androidComponentNotBoil.App"
+        android:name=".ContributesAndroidInjector.App"
         android:theme="@style/Theme.HelloDagger">
         <activity
-            android:name=".androidComponentNotBoil.MainActivity"
+            android:name=".ContributesAndroidInjector.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
