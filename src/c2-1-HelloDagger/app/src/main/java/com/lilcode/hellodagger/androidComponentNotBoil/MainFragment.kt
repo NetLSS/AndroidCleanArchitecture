@@ -1,44 +1,38 @@
 package com.lilcode.hellodagger.androidComponentNotBoil
 
 import android.content.Context
-import android.content.SharedPreferences
 import android.util.Log
 import androidx.fragment.app.Fragment
+import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 import javax.inject.Named
 
 class MainFragment: Fragment() {
 
     @Inject
-    lateinit var sharedPreferences: SharedPreferences
+    @Named("app")
+    lateinit var appString: String
 
     @Inject
-    lateinit var activityName: String
+    @Named("activity")
+    lateinit var activityString: String
 
-    @set: [Inject Named("randomNumber")]
-    var randomNumber: Int? = null
+    @Inject
+    @Named("fragment")
+    lateinit var fragmentString: String
 
     override fun onAttach(context: Context) {
-        super.onAttach(context)
-        if (activity is MainActivity){
-            (activity as MainActivity).getComponent()
-                .mainFragmentComponentBuilder()
-                .setModule(MainFragmentModule())
-                .setFragment(this)
-                .build()
-                .inject(this)
-        }
+        AndroidSupportInjection.inject(this)
 
-        Log.d("MainFragment", activityName)
-        Log.d("MainFragment", "randomNUmber = $randomNumber")
+        Log.e("MainFragment", appString)
+        Log.e("MainFragment", activityString)
+        Log.e("MainFragment", fragmentString)
+
         /*
-        실행2
-        2021-08-02 18:39:34.958 2853-2853/com.lilcode.hellodagger D/MainFragment: MainActivity
-        2021-08-02 18:39:34.958 2853-2853/com.lilcode.hellodagger D/MainFragment: randomNUmber = -1329834136
-
-        실행1
-        2021-08-02 18:40:33.910 3342-3342/com.lilcode.hellodagger D/MainFragment: MainActivity
-        2021-08-02 18:40:33.910 3342-3342/com.lilcode.hellodagger D/MainFragment: randomNUmber = -709593616
+        2021-08-03 11:46:36.146 28214-28214/com.lilcode.hellodagger E/MainFragment: String from AppModule
+        2021-08-03 11:46:36.146 28214-28214/com.lilcode.hellodagger E/MainFragment: String from MainActivityModule
+        2021-08-03 11:46:36.146 28214-28214/com.lilcode.hellodagger E/MainFragment: String from fragment
          */
+        super.onAttach(context)
     }
 }

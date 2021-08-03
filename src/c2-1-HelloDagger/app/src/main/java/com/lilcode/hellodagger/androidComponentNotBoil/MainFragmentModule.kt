@@ -2,11 +2,12 @@ package com.lilcode.hellodagger.androidComponentNotBoil
 
 import dagger.Module
 import dagger.Provides
-import kotlin.random.Random
+import javax.inject.Named
 
 @Module
 class MainFragmentModule {
+    @Named("fragment")
     @Provides
     @FragmentScope
-    fun provideInt() = Random.nextInt()
+    fun provideString() = "String from fragment"
 }

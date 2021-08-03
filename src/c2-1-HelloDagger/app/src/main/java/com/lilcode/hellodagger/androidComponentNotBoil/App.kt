@@ -1,17 +1,25 @@
 package com.lilcode.hellodagger.androidComponentNotBoil
 
 import android.app.Application
+import dagger.android.AndroidInjector
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.HasAndroidInjector
+import javax.inject.Inject
 
-class App : Application() {
+class App : Application(), HasAndroidInjector{
 
-    private lateinit var appComponent: AppComponent
+    @Inject
+    lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Any>
 
-    @Override
     override fun onCreate() {
         super.onCreate()
-        appComponent = DaggerAppComponent.factory()
-            .create(this, AppModule())
+        DaggerAppComponent.factory()
+            .create(this)
+            .inject(this)
     }
 
-    fun getAppComponent() = appComponent
+    override fun androidInjector(): AndroidInjector<Any> {
+        return dispatchingAndroidInjector
+    }
+
 }

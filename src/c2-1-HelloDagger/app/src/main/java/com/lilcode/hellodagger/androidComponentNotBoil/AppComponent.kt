@@ -2,26 +2,18 @@ package com.lilcode.hellodagger.androidComponentNotBoil
 
 import dagger.BindsInstance
 import dagger.Component
+import dagger.android.AndroidInjectionModule
+import dagger.android.AndroidInjector
 import javax.inject.Singleton
-
-@Component(modules = [AppModule::class])
+/*
+안드로이드 프레임워크 관련 클래스에 의존성 주입을 위임할 AndroidInjector<?> 팩토리를 멀티 바인딩으로 관리
+ */
+@Component(modules = [AndroidInjectionModule::class, AppModule::class])
 @Singleton
-interface AppComponent {
-    /**
-     * 서브 컴포넌트(MainActivityComponent)에 빌더가 정의 되어 있으면,
-     * 컴포넌트에서 서브 컴포넌트의 빌더를 반환하는 프로비전 메서드를 가질 수 있음
-     */
-    fun mainActivityComponentBuilder(): MainActivityComponent.Builder
+interface AppComponent: AndroidInjector<App> {
 
-    fun inject(app: App)
-
-    /*
-    팩토리를 통해 생성
-    create() 매개 변수로 애플리케이션 컴포넌트의 모듈로 AppModul,
-    애플리케이션 클래스인 App을 받음
-     */
     @Component.Factory
-    interface Factory {
-        fun create(@BindsInstance app: App, appModule: AppModule): AppComponent
+    interface Factory : AndroidInjector.Factory<App>{
+        // App 인스턴스를 그래프에 바인딩 하고 Component 를 반환하는 create() 메서드가 이미 포함
     }
 }
