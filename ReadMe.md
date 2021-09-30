@@ -2,7 +2,7 @@
 
 - 안드로이드 클린 아키텍쳐 학습을 위한 저장소
 - Dagger
-- RxJava
+- RxJava (저장소 별도: [[저장소1](https://github.com/NetLSS/HelloRxJava)])
 - JetPack Component
 <br/>
 with 아키텍쳐를 알아야 앱 개발이 보인다. - charlezz 
