@@ -17,3 +17,4 @@ src/c5-1-reflection/.idea/libraries/KotlinJavaRuntime.xml
 src/c5-1-reflection/.idea/codeStyles/codeStyleConfig.xml
 src/c5-1-reflection/out/production/c5-1-reflection/META-INF/c5-1-reflection.kotlin_module
 src/c5-1-reflection/.idea/codeStyles/Project.xml
+*.class
